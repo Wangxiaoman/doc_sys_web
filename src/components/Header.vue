@@ -1,6 +1,6 @@
 <template>
 	<div class="header-wrapper">
-		<img class="logo" :src="logoUrl" @click="$router.push({ name: 'Home' })" />
+		<!-- <img class="logo" :src="logoUrl" @click="$router.push({ name: 'Home' })" /> -->
 		<img
 			class="logo-xs"
 			:src="logoUrlXs"
@@ -12,17 +12,7 @@
 			mode="horizontal"
 			@select="menuItemClick"
 		>
-			<el-menu-item index="Home">首页</el-menu-item>
-			<el-menu-item index="File">网盘</el-menu-item>
-			<li class="el-menu-item external-link">
-        <a href="https://pan.qiwenshare.com/docs/" target="_blank">文档</a>
-			</li>
-      <li class="el-menu-item external-link">
-        <a class="beta-link" href="https://netdisk.qiwenshare.com" target="_blank">
-          <span class="beta-text">企业网盘</span>
-          <el-tag class="beta-tag" type="warning" size="mini" effect="dark">内测</el-tag>
-        </a>
-      </li>
+			<el-menu-item index="File">文档系统</el-menu-item>
 			<template v-if="isLogin">
 				<el-submenu
 					class="user-exit-submenu"
@@ -64,7 +54,7 @@ export default {
 	name: 'Header',
 	data() {
 		return {
-			logoUrl: require('_a/images/common/logo_header.png'),
+			//logoUrl: require('_a/images/common/logo_header.png'),
 			logoUrlXs: require('_a/images/common/logo_header_xs.png')
 		}
 	},
