@@ -352,7 +352,8 @@ export default {
 		 * 上传文件按钮点击事件
 		 * @description 通过Bus通信，开启全局上传文件流程
 		 * @param {boolean} uploadWay 上传方式 0-文件上传 1-文件夹上传 2-粘贴图片或拖拽上传
-		 */
+		*/
+
 		handleUploadFileBtnClick(uploadWay) {
 			this.$openDialog.authWeChat({}).then((res) => {
 				switch (res) {
@@ -372,6 +373,7 @@ export default {
 				}
 			})
 		},
+
 
 		/**
 		 * 批量删除按钮点击事件

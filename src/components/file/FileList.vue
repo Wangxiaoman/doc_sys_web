@@ -311,9 +311,10 @@ export default {
 				this.loading = false
 				if (res.success) {
 					this.fileList = res.dataList.map((item) => {
+						const highlight = item.highLight && item.highLight.fileName && item.highLight.fileName[0] ? item.highLight.fileName[0] : null;
 						return {
 							...item,
-							highlightFields: item.highLight.fileName[0]
+							...(highlight && { highlightFields: highlight })
 						}
 					})
 					this.pageData.total = res.data.totalHits

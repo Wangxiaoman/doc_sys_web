@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { getWeChatAuthState } from '_r/user.js'
+// import { getWeChatAuthState } from '_r/user.js'
 
 export default {
 	name: 'AddFolderDialog',
@@ -46,9 +46,13 @@ export default {
 		}
 	},
 	methods: {
+		getWeChatAuthStateData() {
+			this.callback('go')
+		},
+
 		/**
 		 * 获取微信认证状态
-		 */
+
 		getWeChatAuthStateData() {
 			if (
 				process.env.NODE_ENV !== 'development' &&
@@ -69,6 +73,8 @@ export default {
 				this.callback('go')
 			}
 		},
+		 */
+
 		/**
 		 * DOM 绑定回车事件
 		 * @description 回车触发新增文件夹事件

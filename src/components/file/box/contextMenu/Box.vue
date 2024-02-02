@@ -134,6 +134,20 @@
 			>
 				<i class="el-icon-document"></i> 文件详情
 			</li>
+			<li
+				class="right-menu-item"
+				@click="ocrConvertText(selectedFile)"
+				v-if="ocrBtnShow"
+			>
+				<i class="el-icon-document"></i> OCR识别
+			</li>
+			<li
+				class="right-menu-item"
+				@click="pdfConvertWordClick(selectedFile)"
+				v-if="pdfConvertBtnShow"
+			>
+				<i class="el-icon-document"></i> PDF转为WORD
+			</li>
 		</ul>
 		<!-- 在空白处右键，右键列表展示新建文件夹、新建文件等操作按钮 -->
 		<ul
@@ -301,6 +315,14 @@ export default {
 		detailInfoBtnShow() {
 			return true
 		},
+		// OCR按钮是否显示，图片显示OCR识别的按钮
+		ocrBtnShow() {
+			return [1].includes(this.fileType)
+		},
+		// PDF转换word的按钮
+		pdfConvertBtnShow() {
+			return ['pdf'].includes(this.selectedFile.extendName)
+		},
 		// 上传文件组件参数
 		uploadFileParams() {
 			return {
@@ -428,6 +450,15 @@ export default {
 					this.callback(res)
 				})
 		},
+		ocrConvertText(fileInfo) {
+			this.visible = false
+			this.$openDialog.ocrFile({ fileInfo })
+		},
+		pdfConvertWordClick(fileInfo) {
+			this.visible = false
+			this.$openDialog.pdfConvertWord({ fileInfo })
+		},
+
 		/**
 		 * 删除按钮点击事件
 		 * @description 区分 删除到回收站中 | 在回收站中彻底删除，打开确认对话框

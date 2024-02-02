@@ -1,11 +1,11 @@
 <template>
 	<div class="footer-wrapper">
 		<div class="copy-right-wrapper">
-			<img
+			<!-- <img
 				class="logo"
 				:src="logoUrl"
 				:alt="$store.getters.imgAlt + 'footerLogo'"
-			/>
+			/> -->
 			<div class="copy-right">
 				<span>{{ webSiteName }} {{ copyrightYear }} 版权所有</span>
 				<span class="split">|</span>
@@ -24,6 +24,7 @@
 			</div>
 		</div>
 		<div class="join-us">
+			<!--
 			<div class="desc">如果你也是对技术感兴趣的小伙伴，欢迎加入我们</div>
 			<ul class="join-list">
 				<li class="join-item" v-for="(item, index) in joinList" :key="index">
@@ -41,6 +42,7 @@
 					</el-popover>
 				</li>
 			</ul>
+			-->
 		</div>
 	</div>
 </template>

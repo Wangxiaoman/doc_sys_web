@@ -55,6 +55,12 @@ export const unzipFile = (p) => post('/file/unzipfile', p)
 export const searchFile = (p) => get('/file/search', p)
 // 分享文件
 export const shareFile = (p) => post('/share/sharefile', p)
+// OCR识别文件
+export const ocrFile = (p) => post('/ocr/fileid/predict', p)
+// PDF转换为WORD
+export const pdfConvertWord = (p) => post('/pdf/word', p)
+
+
 // 校验分享链接过期时间
 export const checkShareLinkEndtime = (p) => get('/share/checkendtime', p)
 // 校验分享链接是否需要提取码
